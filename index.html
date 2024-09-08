@@ -1,20 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Salary Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Salary calculator</title>
 </head>
 <body>
-  <header>
-    <h1>Salary Calculator</h1>
-  </header>
-  <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
-  </main>
-  <footer>
-    <p>Total Monthly</p>
-  </footer>
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Add Emplyee</h2>
+            <form id = "empty">
+                <input
+                id = "firstName"
+                  placeholder="First Name"
+                  type="text"
+                  data-testid="firstNameInput"
+                  >
+                <input
+                id = "lastName"
+                  placeholder="Last Name"
+                  type="text"
+                  data-testid="lastNameInput"
+                  >
+                  <input
+                  id= "id"
+                  placeholder="Id"
+                  type= "text"
+                  data-testid="idInput"
+                  >
+                  <input 
+                  id="title"
+                  placeholder="Title"
+                  type="text"
+                  data-testid="titleInput"
+                  >
+                  <input
+                  id="annualSalary"
+                  placeholder="Annual Salary"
+                  type="number"
+                  data-testid="annualSalaryInput"
+                  >                  
+                <button data-testid="submitButton" onClick = "handleSubmit(event)">Submit</button>
+                    
+
+              </form>       
+            
+        </section>
+        <section>
+            <h3>Employees</h3>
+            <table >
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>LastName</th>
+                  <th>Id</th>
+                  <th>Title</th>
+                  <th>Annual Salary</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id = "info">
+                
+              </tbody>
+            </table>
+          </section>        
+
+    </main>
+    <footer>
+        <h3 id = "salaryTotal">  </h3>
+    </footer>
+    
+    
+
+   
+    
 </body>
 </html>
