@@ -1,10 +1,11 @@
-let salaryTotal =0;
+let totalMonthly =0;
+
 
 
 function handleSubmit(event){
     event.preventDefault();
 
-    
+   
     let deleteInfo = `<td onclick = deleteInfo(event)>❌</td>`
     let firstName = document.getElementById('firstName').value
     let lastName = document.getElementById('lastName').value
@@ -12,25 +13,23 @@ function handleSubmit(event){
     let title = document.getElementById('title').value
     let annualSalary = Number(document.getElementById('annualSalary').value)
     console.log(annualSalary);
-     info.innerHTML += `<tr id = 'row'><td>${firstName}</td><td>${lastName}</td><td>${id}</td><td>${title}</td><td id ='aSalary' >${annualSalary}${deleteInfo}</td></tr>`
+     info.innerHTML += `<tr><td>${firstName}</td><td>${lastName}</td><td>${id}</td><td>${title}</td><td>${annualSalary}${deleteInfo}</td></tr>`
     let emptyInfo = document.getElementById('empty')
     emptyInfo.reset();
 
-   salaryTotal += annualSalary;
-    console.log('salary total ',salaryTotal);
+    let monthlySalary = annualSalary/12;
+   totalMonthly += monthlySalary;
+    console.log('salary total ',totalMonthly);
 
     let footer = document.getElementById('salaryTotal');
-    console.log('footer ',footer);
-     
+    let addFooter = document.getElementsByTagName('footer');
 
-    if(salaryTotal > 20000){
-        footer.innerHTML = document.querySelector('footer').classList .add('addColor');
+
+    if(totalMonthly > 20000){
+        footer.innerHTML = document.querySelector('footer').classList .add('over-budget');
 
     }
-    footer.innerHTML = `Total Monthly :${salaryTotal}`
-    
-   
-    
+    footer.innerHTML = `Total Monthly: $ ${totalMonthly}`  
         
 
    
@@ -38,7 +37,6 @@ function handleSubmit(event){
 
 function deleteInfo(event){
     let thisInfo = event.target.parentElement
-    
     
     thisInfo.remove();
 
